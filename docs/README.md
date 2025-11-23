@@ -1,6 +1,8 @@
-# Architecture
+# Logic Architecture
 
-[Architecture](./Architecture/README.md)
+[Architecture](./Logical%20Architecture/README.md)
+
+# Deployment Architecture
 
 # Local Development
 
