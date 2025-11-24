@@ -35,11 +35,12 @@ Note: lessons can only be created as a part of a course.
 
 ### Update
 
-Lesson can be updated.
+Lessons can be updated.
 - Add/update text and images
 - Add/update translation
 - Add/update audio
 - Add/update words
+- Add/update deck
 
 ### Study
 
