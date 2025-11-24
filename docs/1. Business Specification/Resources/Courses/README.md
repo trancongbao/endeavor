@@ -1,5 +1,11 @@
 [Back to Overview](README.md)
-A __Course__ provides sytematic knowledge and practice in reading, writing, listening, speaking, grammar and vocabulary, for particular topic at a particular English level.
+
+# Course
+
+A __Course__ provides systematic knowledge and practice in reading, writing, listening, speaking, grammar and vocabulary, for particular topic at a particular English level.
+
+A course is a collection of lessons.
+
 A course has following characteristics:
 - Created by admin.
 - Have a a set of lessons associated with it.
@@ -11,9 +17,11 @@ A course has following characteristics:
 - Progress of study is tracked.
 - Courses are ranked based on difficulty.
 
-Lessons are order: all lessons are initially locked except the first one, a lesson is only unlocked if the student has finished (all) the previous lesson(s).  
-Each course also has a corresponding Spaced-Repetition flash-cards decks for reviewing vocabulary and grammar.
+Lessons are ordered: all lessons are initially locked except the first one, a lesson is only unlocked if the student has finished (all) the previous lesson(s).
+
+
 Students need to meet reviewing requirements before they can procceed with new lessons/decks.
+
 # Lessons
 A standard lesson includes:
 + title
@@ -31,6 +39,8 @@ A video lesson includes:
 + words section
 + grammar section
 + exercise section
+
+Each lesson also has a corresponding Spaced-Repetition flash-cards decks for reviewing vocabulary and grammar.
 
 # Decks
 Each deck corresponds to a course.  

@@ -1,4 +1,4 @@
-# LESSON
+# Lessons
 
 ```mermaid
 erDiagram
@@ -28,23 +28,3 @@ erDiagram
     date    updated_at        "not null"
   }
 ```
-
-//TODO: lesson `is_video`  
-A standard lesson includes:
-
-- title
-- text with images
-- audio of text
-- translation of text
-- words
-- grammar
-- exercises
-
-A video lesson includes:
-
-- title
-- video with subtitles
-- translation of subtitles
-- words section
-- grammar section
-- exercise section
