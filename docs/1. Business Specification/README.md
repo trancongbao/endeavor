@@ -39,6 +39,23 @@ Functionalities are defined using triples of form `[user, resource, action]`: a 
 
 Note: an alternative to this is to use couples of form [`resource`, `action`] (without the `user` - relation with `user` are defined in RBAC policies). In this approach, it's challenging to name the `action` in a non-ambiguous way. For example, view of a lesson from a `teacher`'s perspective may be different from that of a `student`. So the couple [`lesson`, `view`] is ambiguous. We may add qualifier such as [`lesson`, `teacher-view`] and [`lesson`, `student-view`], but this is not elegant. The use of triple also has an important advantage of being user-centric.
 
+| user    | resource       | action                | note                                       |
+| ------- | -------------- | --------------------- | ------------------------------------------ |
+| admin   | course         | create                |                                            |
+| admin   | course         | preview-all           | preview any course                         |
+| admin   | course         | modify-all            | modify any course                          |
+| admin   | course         | grant-teacher-preview | grant permission to preview course         |
+| admin   | course         | grant-teacher-submit  | grant permission to submit change requests |
+| admin   | course-request | approve               | approve change request by teachers         |
+| admin   | course         | publish               | make course public                         |
+| admin   | course         | unpublish             | hide/remove course from public             |
+| admin   | course         | grant-student-study   | grant learning access to students          |
+| admin   | course         | study-all             | can study any course                       |
+| teacher | course         | preview               | only for granted courses                   |
+| teacher | course         | modify-version        | create modified version (local draft)      |
+| teacher | course-request | submit                | submit change request to admin             |
+| student | course         | study                 | only when access is granted                |
+
 ## Admin functionalities
 
 Admins can:
