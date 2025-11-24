@@ -27,8 +27,8 @@ See [Decks](./Decks/README.md) for more details.
 
 Lessons can be created.
 Newly created lesson has the following attributes:
-- title
 - the course it belongs to
+- title
 
 Note: lessons can only be created as a part of a course.
 
