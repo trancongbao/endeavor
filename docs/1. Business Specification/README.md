@@ -26,7 +26,14 @@ A lesson must be part of a course - it cannot be created independently.
 
 See [Lessons](./Lessons/README.md) for more details.
 
-## Roles and Functionalities
+## Admin
+
+Admins have the highest priviledge in the app.
+
+- They can, for example, add or remove users, change user role.
+- They also have all permissions for all courses.
+
+## Functionalities
 
 ## Admin functionalities
 
