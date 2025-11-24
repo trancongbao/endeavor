@@ -25,12 +25,22 @@ See [Decks](./Decks/README.md) for more details.
 
 ### Creation
 
+Lessons can be created.
+Newly created lesson has the following attributes:
+- title
+- the course it belongs to
+
+Note: lessons can only be created as a part of a course.
+
 ### Update
+
 - Add/update text and images
 - Add/update translation
 - Add/update audio
 - Add/update words
 
 ### Study
+
+- View
 
 ### Deletion
