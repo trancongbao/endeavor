@@ -53,6 +53,8 @@ Functionalities are defined using triples of form `[user, resource, action]`: a 
 
 Note: an alternative to this is to use couples of form [`resource`, `action`] (without the `user` - relation with `user` are defined in RBAC policies). In this approach, it's challenging to name the `action` in a non-ambiguous way. For example, view of a lesson from a `teacher`'s perspective may be different from that of a `student`. So the couple [`lesson`, `view`] is ambiguous. We may add qualifier such as [`lesson`, `teacher-view`] and [`lesson`, `student-view`], but this is not elegant. The use of triple also has an important advantage of being user-centric.
 
+Below is the high-level description of functionalities. `High-level` here means that the action does not correspond to
+
 ### Teacher
 
 | User    | Resource     | Action | Note                                                  |
@@ -61,7 +63,7 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 | teacher | course-draft | view   | A teacher can view a modified version of a course.    |
 | teacher | course-draft | modify | A teacher can modify a modified version of a course.  |
 | teacher | course-draft | submit | A teacher can submit his draft to admin for approval. |
-| teacher | course       | view   | A teacher can (pre)view all courses.                  |
+| teacher | course       | view   | A teacher can (pre)view all courses: browse lessons.  |
 | teacher | course       | study  | A teacher can study all courses.                      |
 
 ### Student
@@ -81,6 +83,5 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 | admin | course       | publish             | An admin can publish a course.                                    |
 | admin | course       | unpublish           | An admin can hide/remove course from public.                      |
 | admin | course       | grant-student-study | An admin can grant course study permission to students.           |
+| admin | course       | view                | An admin can (pre)view all courses: browse lessons.               |
 | admin | course       | study               | An admin can study (any) course.                                  |
-
-### Study
