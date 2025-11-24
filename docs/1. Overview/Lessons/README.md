@@ -28,12 +28,14 @@ See [Decks](./Decks/README.md) for more details.
 Lessons can be created.
 Newly created lesson has the following attributes:
 - the course it belongs to
-- title
+- order of the lesson in the course
+- title: must be unique for a course
 
 Note: lessons can only be created as a part of a course.
 
 ### Update
 
+Lesson can be updated.
 - Add/update text and images
 - Add/update translation
 - Add/update audio
@@ -41,6 +43,9 @@ Note: lessons can only be created as a part of a course.
 
 ### Study
 
-- View
+Lesson can be studied.
+- Lesson details are shown for studying.
+- Progress are tracked.
+- Lessons need to be studied in order.
 
 ### Deletion
