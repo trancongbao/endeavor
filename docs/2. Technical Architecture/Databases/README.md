@@ -1,3 +1,5 @@
+# Relational vs. Non-relational Data Model
+
 There are a lots of many-to-many relationships.
 
 - Words and Cards
