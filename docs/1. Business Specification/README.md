@@ -35,9 +35,9 @@ Admins have the highest priviledge in the app.
 
 ## Functionalities
 
-Functionalities can be defined as: a `user` perform and `action` on a `resource`.
+Functionalities are defined using triples of form `[user, resource, action]`: a `user` perform and `action` on a `resource`.
 
-Note: resource, action without
+Note: an alternative to this is using a couples of form [`resource`, `action`] (without the `user`). `user` will be defined in role definitions. In this approach, it's difficult to 
 
 ## Admin functionalities
 
