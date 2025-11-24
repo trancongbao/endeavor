@@ -66,9 +66,9 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 
 ### Student
 
-| User    | Resource | Action | Note                        |
-| ------- | -------- | ------ | --------------------------- |
-| student | course   | study  | Only when access is granted |
+| User    | Resource | Action | Note                                       |
+| ------- | -------- | ------ | ------------------------------------------ |
+| student | course   | study  | A student can study a course whe assigned. |
 
 ### Admin
 
