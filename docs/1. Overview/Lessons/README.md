@@ -49,3 +49,4 @@ Lesson can be studied.
 - Lessons need to be studied in order.
 
 ### Deletion
+- Lesson can be deleted.
