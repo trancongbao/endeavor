@@ -62,6 +62,7 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 | teacher | course-draft | modify | A teacher can modify a modified version of a course.  |
 | teacher | course-draft | submit | A teacher can submit his draft to admin for approval. |
 | teacher | course       | view   | A teacher can (pre)view all courses.                  |
+| teacher | course       | study  | A teacher can study all courses.                      |
 
 ### Student
 
