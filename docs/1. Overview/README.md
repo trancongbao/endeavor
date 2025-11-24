@@ -1,6 +1,6 @@
 # Overview
 
-The ENDEAVOR application is a web application that provides 3 main functionalities for 3 types of users:
+The Endeavor application is a web application that provides 3 main functionalities for 3 types of users:
 + Students can study English courses.
 + Teachers can modify English courses.
 + Admins can manage students, teachers, and the courses.
@@ -11,17 +11,9 @@ The __online courses__ are mainly used as complementary materials for offline co
 
 ## Lessons
 
-The basic "resource" that the app provide is lesson. 
-A standard lesson includes:
-+ title
-+ text with images
-+ audio of text
-+ translation of text
-+ words
-+ grammar
-+ exercises
+In Endeavor, a lesson is the core educational unit that students interact with. It serves as both a learning material and a structured container of knowledge for a specific topic.
 
-Each lesson also has a corresponding spaced-repetition flash-cards decks for reviewing vocabulary and grammar.
+See [Lessons](./Lessons/README.md) for more details.
 
 ## Courses and Lessons
 
