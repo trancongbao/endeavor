@@ -22,7 +22,9 @@ A course is a collection of lessons. A lesson must be part of a course - it cann
 See [Courses](./Courses/README.md) for more details.
 
 ## Roles and Functionalities
+
 ## Admin functionalities
+
 Admins can: 
 + create courses
 + preview all courses
@@ -32,13 +34,17 @@ Admins can:
 + publish/unpublish a course
 + grant students (learning) access to courses
 + study all courses
+
 ## Teachers 
+
 Teachers are EEC employees.  
 For courses that admins grant access to, a teacher can:
 + preview content of the course
 + make a modified verision of the course
 + submit a change request to admins
+
 ## Students 
+
 Students are mainly EEC students.  
 A student will be provided access to an online course free-of-charge if he/she has registered the corresponding offline course. He/she then can:
 + study the course
