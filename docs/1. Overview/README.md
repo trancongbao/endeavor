@@ -13,7 +13,7 @@ The __online courses__ are mainly used as complementary materials for offline co
 
 [Course](Course.md)
 
-## Users and Functionalities
+## Roles and Functionalities
 ## Admin functionalities
 Admins can: 
 + create courses
