@@ -1,4 +1,4 @@
-# Overview
+# Business Specification
 
 The Endeavor application is a web application that provides 3 main functionalities for 3 types of users:
 
