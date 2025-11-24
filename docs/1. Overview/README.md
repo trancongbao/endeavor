@@ -9,6 +9,8 @@ The ENDEAVOR application is a web application that provides 3 main functionaliti
 
 The __online courses__ are mainly used as complementary materials for offline courses provided by Endeavor English Center (ECC).
 
+## Courses and Lessons
+
 [Course](Course.md)
 
 # Users and Functionalities
