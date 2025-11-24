@@ -1,7 +1,5 @@
 # Cards
 
-## Data Model
-
 ```mermaid
 erDiagram
   CARD {
@@ -30,5 +28,3 @@ erDiagram
   CARD_WORD ||--o{ WORD : contains
   CARD_WORD ||--o{ CARD : contains
 ```
-
-

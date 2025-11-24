@@ -1,6 +1,6 @@
 # Card
 
-## Add card
+## Add
 
 ```mermaid
 sequenceDiagram
