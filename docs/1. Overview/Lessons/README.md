@@ -44,9 +44,9 @@ Lesson can be updated.
 ### Study
 
 Lesson can be studied.
-- Lesson details are shown for studying.
-- Progress are tracked.
-- Lessons need to be studied in order.
+- Lesson details can be viewed for studying purpose.
+- Study progress is tracked.
+- Lessons in a course need to be studied in order.
 
 ### Deletion
 - Lesson can be deleted.
