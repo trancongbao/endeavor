@@ -17,7 +17,7 @@ A video lesson includes:
 + grammar section
 + exercise section
 
-Each lesson also has a corresponding spaced-repetition flash-cards decks for reviewing vocabulary and grammar.
+Each lesson also has a corresponding spaced-repetition flash-cards deck for reviewing vocabulary and grammar.
 
 See [Decks](./Decks/README.md) for more details.
 
