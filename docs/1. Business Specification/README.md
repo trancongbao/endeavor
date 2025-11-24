@@ -10,7 +10,9 @@ The Endeavor application is a web application that provides 3 main functionaliti
 
 The **online courses** are mainly used as complementary materials for offline courses provided by Endeavor English Center (ECC).
 
-## Courses
+## Main Resources
+
+### Courses
 
 In Endeavor, A course is a collection of lessons.
 
@@ -18,7 +20,7 @@ Also, courses are assigned and access-controlled as a whole.
 
 See [Courses](./Courses/README.md) for more details.
 
-## Lessons
+### Lessons
 
 A lesson is the core educational unit that users interact with. It serves as both a learning material and a structured container of knowledge for a specific topic.
 
@@ -26,14 +28,16 @@ A lesson must be part of a course - it cannot be created independently.
 
 See [Lessons](./Lessons/README.md) for more details.
 
-## Admin
+## Users
+
+### Admin
 
 Admins have the highest priviledge in the app.
 
 - They can, for example, add or remove users, change user role.
 - They also have all permissions for all courses.
 
-## Teachers
+### Teachers
 
 Teachers are EEC employees.
 For courses that admins grant access to, a teacher can:
@@ -42,7 +46,7 @@ For courses that admins grant access to, a teacher can:
 - make a modified verision of the course
 - submit a change request to admins
 
-## Students
+### Students
 
 Students are mainly EEC students.  
 A student will be provided access to an online course free-of-charge if he/she has registered the corresponding offline course. He/she then can study the course.
