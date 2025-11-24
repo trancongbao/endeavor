@@ -65,6 +65,12 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 | teacher | course-draft | submit | A teacher can submit his draft to admin for approval. |
 | teacher | course       | view   | A teacher can (pre)view all courses.                  |
 
+### Student
+
+| User    | Resource | Action | Note                        |
+| ------- | -------- | ------ | --------------------------- |
+| student | course   | view   | Only when access is granted |
+
 ### Admin
 
 | User    | Resource       | Action              | Note                                                              |
@@ -80,9 +86,3 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 | teacher | course         | preview             | only for granted courses                                          |
 | teacher | course         | modify-version      | create modified version (local draft)                             |
 | teacher | course-request | submit              | submit change request to admin                                    |
-
-### Student
-
-| User    | Resource | Action | Note                        |
-| ------- | -------- | ------ | --------------------------- |
-| student | course   | view   | Only when access is granted |
