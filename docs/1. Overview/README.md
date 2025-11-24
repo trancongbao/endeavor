@@ -8,10 +8,13 @@ The ENDEAVOR application is a web application that provides 3 main functionaliti
 ```mermaid
     C4Context
         Person(admin, "Admin")
-        Person(admin, "Admin")
-        Person(admin, "Admin")
+        Person(teacher, "Teacher")
+        Person(student, "Student")
 
-        System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+        System(Endeavor, "Endeavor")
+
+        Rel(admin, Endeavor, "Configure IAM")
+        Rel(teacher, Endeavor, "Create course")
 ```
 
 The __online courses__ are mainly used as complementary materials for offline courses provided by Endeavor English Center (ECC).
