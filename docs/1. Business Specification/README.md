@@ -83,6 +83,3 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 | admin   | course         | unpublish           | An admin can hide/remove course from public.                      |
 | admin   | course         | grant-student-study | An admin can grant course study permission to students.           |
 | admin   | course         | study               | An admin can study (any) course.                                  |
-| teacher | course         | preview             | only for granted courses                                          |
-| teacher | course         | modify-version      | create modified version (local draft)                             |
-| teacher | course-request | submit              | submit change request to admin                                    |
