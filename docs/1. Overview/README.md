@@ -9,6 +9,20 @@ The ENDEAVOR application is a web application that provides 3 main functionaliti
 
 The __online courses__ are mainly used as complementary materials for offline courses provided by Endeavor English Center (ECC).
 
+## Lessons
+
+The basic "resource" that the app provide is lesson. 
+A standard lesson includes:
++ title
++ text with images
++ audio of text
++ translation of text
++ words
++ grammar
++ exercises
+
+Each lesson also has a corresponding spaced-repetition flash-cards decks for reviewing vocabulary and grammar.
+
 ## Courses and Lessons
 
 [Course](Course.md)
