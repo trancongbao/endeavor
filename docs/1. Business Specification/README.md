@@ -80,6 +80,8 @@ See [Teacher](./Functionalities/Teacher/README.md) for more details.
 | student | course   | study       | A student can study a course when assigned. |
 | student | course   | study_decks | A student can study all decks.              |
 
+See [Student](./Functionalities/Student/README.md) for more details.
+
 ### Admin
 
 | User  | Resource     | Action              | Note                                                              |
@@ -87,9 +89,11 @@ See [Teacher](./Functionalities/Teacher/README.md) for more details.
 | admin | course_draft | create              | An admin can create new course drafts.                            |
 | admin | course_draft | view                | An admin can (pre)view all course drafts.                         |
 | admin | course-draft | modify              | An admin can create a modified version of a course when assigned. |
-| admin | course-draft | approve             | An admin can approve course draft.                                |
+| admin | course-draft | approve             | An admin can approve a course draft.                              |
 | admin | course       | publish             | An admin can publish a course.                                    |
 | admin | course       | unpublish           | An admin can hide/remove course from public.                      |
 | admin | course       | grant-student-study | An admin can grant course study permission to students.           |
 | admin | course       | view                | An admin can (pre)view all courses: browse lessons.               |
 | admin | course       | study               | An admin can study (any) course.                                  |
+
+See [Admin](./Functionalities/Admin/README.md) for more details.
