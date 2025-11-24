@@ -35,6 +35,10 @@ Admins have the highest priviledge in the app.
 
 ## Functionalities
 
+Functionalities can be defined as: a `user` perform and `action` on a `resource`.
+
+Note: resource, action without
+
 ## Admin functionalities
 
 Admins can:
