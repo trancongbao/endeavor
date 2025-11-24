@@ -5,7 +5,7 @@ The ENDEAVOR application is a web application that provides 3 main functionaliti
 + Teachers can modify English courses.
 + Admins can manage students, teachers, and the courses.
 
-<img src="./Context Diagram.excalidraw.svg" width="700">
+<img src="./images/Context Diagram.excalidraw.svg" width="700">
 
 The __online courses__ are mainly used as complementary materials for offline courses provided by Endeavor English Center (ECC).
 
@@ -13,7 +13,7 @@ The __online courses__ are mainly used as complementary materials for offline co
 
 [Course](Course.md)
 
-# Users and Functionalities
+## Users and Functionalities
 ## Admin functionalities
 Admins can: 
 + create courses
