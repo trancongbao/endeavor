@@ -1,11 +1,26 @@
-# Sub-domains
-+ admin.endeavor.com
-+ teach.endeavor.com
-+ study.endeavor.com
+# Architecture
+
+## Container Diagram
+
+<img src="./Container.excalidraw.svg" width="400">
+
+## Data Model
+
+See [Data Model](./Data%20Model/README.md).
+
+## Modules
+
+## Sub-domains
+
+- admin.endeavor.com
+- teach.endeavor.com
+- study.endeavor.com
 
 # User service
-+ user admin APIs: create, read, update, delete
-+ authentication: JWT
+
+- user admin APIs: create, read, update, delete
+- authentication: JWT
+
 ```mermaid
 sequenceDiagram
     participant Browser
@@ -23,26 +38,30 @@ sequenceDiagram
 ```
 
 # Admin service
-+ user admin APIs
-+ create course
-+ approve change requests
-+ publish course
-+ student-course permission
-+ teacher-course permission
+
+- user admin APIs
+- create course
+- approve change requests
+- publish course
+- student-course permission
+- teacher-course permission
 
 # Teacher service
-+ submit change requests 
-+ search and suggestion
+
+- submit change requests
+- search and suggestion
 
 # Course service
-+ list courses
-+ preview courses
-+ list lessons
+
+- list courses
+- preview courses
+- list lessons
 
 # Lesson service
-+ preview lesson
-+ modify lesson
-+ study lesson
+
+- preview lesson
+- modify lesson
+- study lesson
 
 # Word service
 
