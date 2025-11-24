@@ -5,17 +5,7 @@ The ENDEAVOR application is a web application that provides 3 main functionaliti
 + Teachers can modify English courses.
 + Admins can manage students, teachers, and the courses.
 
-```mermaid
-    C4Context
-        Person(admin, "Admin")
-        Person(teacher, "Teacher")
-        Person(student, "Student")
-
-        System(Endeavor, "Endeavor")
-
-        Rel(admin, Endeavor, "Configure IAM")
-        Rel(teacher, Endeavor, "Create course")
-```
+<img src="./Context Diagram.excalidraw.svg" width="700">
 
 The __online courses__ are mainly used as complementary materials for offline courses provided by Endeavor English Center (ECC).
 
