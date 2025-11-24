@@ -45,9 +45,7 @@ For courses that admins grant access to, a teacher can:
 ## Students
 
 Students are mainly EEC students.  
-A student will be provided access to an online course free-of-charge if he/she has registered the corresponding offline course. He/she then can:
-
-- study the course
+A student will be provided access to an online course free-of-charge if he/she has registered the corresponding offline course. He/she then can study the course.
 
 ## Functionalities
 
@@ -69,17 +67,19 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 
 | User    | Resource | Action | Note                        |
 | ------- | -------- | ------ | --------------------------- |
-| student | course   | view   | Only when access is granted |
+| student | course   | study  | Only when access is granted |
 
 ### Admin
 
-| User    | Resource       | Action              | Note                                                              |
-| ------- | -------------- | ------------------- | ----------------------------------------------------------------- |
-| admin   | course_draft   | create              | An admin can create new course drafts.                            |
-| admin   | course_draft   | view                | An admin can (pre)view all course drafts.                         |
-| admin   | course-draft   | modify              | An admin can create a modified version of a course when assigned. |
-| admin   | course-draft   | approve             | An admin can approve course draft.                                |
-| admin   | course         | publish             | An admin can publish a course.                                    |
-| admin   | course         | unpublish           | An admin can hide/remove course from public.                      |
-| admin   | course         | grant-student-study | An admin can grant course study permission to students.           |
-| admin   | course         | study               | An admin can study (any) course.                                  |
+| User  | Resource     | Action              | Note                                                              |
+| ----- | ------------ | ------------------- | ----------------------------------------------------------------- |
+| admin | course_draft | create              | An admin can create new course drafts.                            |
+| admin | course_draft | view                | An admin can (pre)view all course drafts.                         |
+| admin | course-draft | modify              | An admin can create a modified version of a course when assigned. |
+| admin | course-draft | approve             | An admin can approve course draft.                                |
+| admin | course       | publish             | An admin can publish a course.                                    |
+| admin | course       | unpublish           | An admin can hide/remove course from public.                      |
+| admin | course       | grant-student-study | An admin can grant course study permission to students.           |
+| admin | course       | study               | An admin can study (any) course.                                  |
+
+### Study
