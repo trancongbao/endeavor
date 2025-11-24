@@ -26,6 +26,10 @@ See [Decks](./Decks/README.md) for more details.
 ### Creation
 
 ### Update
+- Add/update text and images
+- Add/update translation
+- Add/update audio
+- Add/update words
 
 ### Study
 
