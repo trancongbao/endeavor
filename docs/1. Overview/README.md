@@ -3,7 +3,7 @@
 The Endeavor application is a web application that provides 3 main functionalities for 3 types of users:
 + Students can study English courses.
 + Teachers can modify English courses.
-+ Admins can manage students, teachers, and the courses.
++ Admins can manage students, teachers.
 
 <img src="./images/Context Diagram.excalidraw.svg" width="700">
 
@@ -11,13 +11,15 @@ The __online courses__ are mainly used as complementary materials for offline co
 
 ## Lessons
 
-In Endeavor, a lesson is the core educational unit that students interact with. It serves as both a learning material and a structured container of knowledge for a specific topic.
+In Endeavor, a lesson is the core educational unit that users interact with. It serves as both a learning material and a structured container of knowledge for a specific topic.
 
 See [Lessons](./Lessons/README.md) for more details.
 
-## Courses and Lessons
+## Courses
 
-[Course](Course.md)
+A course is a collection of lessons. A lesson must be part of a course - it cannot be created independently.
+
+See [Courses](./Courses/README.md) for more details.
 
 ## Roles and Functionalities
 ## Admin functionalities
