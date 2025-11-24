@@ -1,3 +1,5 @@
+# Overview
+
 The ENDEAVOR application is a web application that provides 3 main functionalities for 3 types of users:
 + Students can study English courses.
 + Teachers can modify English courses.
