@@ -36,6 +36,8 @@ Note: lessons can only be created as a part of a course.
 ### Update
 
 Lessons can be updated.
+- Change title
+- Reorder
 - Add/update text and images
 - Add/update translation
 - Add/update audio
