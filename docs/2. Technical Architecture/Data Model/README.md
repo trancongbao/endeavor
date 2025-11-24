@@ -2,6 +2,12 @@
 
 ## Users
 
+There are 3 sub-domains having independent authentication/authorization needs. Therefore, 3 separate database tables are used.  
+Basic authentication is used, as it is simple but sufficient. Email is not chosen as login username because young students may not have emails. UUID is difficult to remember. So for each student, a unique username acts as both the primary key and the login username and is created as follows:
+
+- Step 1: concatenate the user's given name and surname (in that order) with underscore "`_`" as separator.
+- Step 2: if the username from step 1 is not unique, append an underscore "`_`" and a counter starting from `2`.
+
 ```mermaid
 erDiagram
     ADMIN {
@@ -40,7 +46,7 @@ erDiagram
     }
 ```
 
-## Courses
+## Resources
 
 ```mermaid
 erDiagram
