@@ -19,6 +19,8 @@ See [Lessons](./Lessons/README.md) for more details.
 
 A course is a collection of lessons. A lesson must be part of a course - it cannot be created independently.
 
+Also, courses are assigned and access-controlled as a whole.
+
 See [Courses](./Courses/README.md) for more details.
 
 ## Roles and Functionalities
@@ -37,7 +39,7 @@ Admins can:
 
 ## Teachers 
 
-Teachers are EEC employees.  
+Teachers are EEC employees.
 For courses that admins grant access to, a teacher can:
 + preview content of the course
 + make a modified verision of the course
