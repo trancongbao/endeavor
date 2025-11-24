@@ -39,9 +39,15 @@ Functionalities are defined using triples of form `[user, resource, action]`: a 
 
 Note: an alternative to this is to use couples of form [`resource`, `action`] (without the `user` - relation with `user` are defined in RBAC policies). In this approach, it's challenging to name the `action` in a non-ambiguous way. For example, view of a lesson from a `teacher`'s perspective may be different from that of a `student`. So the couple [`lesson`, `view`] is ambiguous. We may add qualifier such as [`lesson`, `teacher-view`] and [`lesson`, `student-view`], but this is not elegant. The use of triple also has an important advantage of being user-centric.
 
+| User    | Resource     | Action | Note                                                               |
+| ------- | ------------ | ------ | ------------------------------------------------------------------ |
+| teacher | course       | view   | A teacher can view all courses.                                    |
+| teacher | course-draft | modify | A teacher can create a modified version of a course when assigned. |
+| teacher | course-draft | submit | A teacher can submit his draft to admin for approval.              |
+
 | user    | resource       | action                | note                                       |
 | ------- | -------------- | --------------------- | ------------------------------------------ |
-| admin   | course         | create                |                                            |
+| admin   | course         | create                | Admin creates course.                      |
 | admin   | course         | preview-all           | preview any course                         |
 | admin   | course         | modify-all            | modify any course                          |
 | admin   | course         | grant-teacher-preview | grant permission to preview course         |
@@ -54,7 +60,7 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 | teacher | course         | preview               | only for granted courses                   |
 | teacher | course         | modify-version        | create modified version (local draft)      |
 | teacher | course-request | submit                | submit change request to admin             |
-| student | course         | study                 | only when access is granted                |
+| student | course         | view                  | Only when access is granted                |
 
 ## Admin functionalities
 
