@@ -37,7 +37,7 @@ Admins have the highest priviledge in the app.
 
 Functionalities are defined using triples of form `[user, resource, action]`: a `user` perform and `action` on a `resource`.
 
-Note: an alternative to this is using a couples of form [`resource`, `action`] (without the `user`). `user` will be defined in role definitions. In this approach, it's challenging to name the `action` in a non-ambiguous way. For example, view of a lesson from a `teacher`'s perspective may be different from that of a `student`. So the couple [`lesson`, `view`] is ambiguous. We may add qualifier such as [`lesson`, `teacher-view`] and [`lesson`, `student-view`], but this is not elegant. The use of triple also has an important advantage of being user-centric.
+Note: an alternative to this is to use couples of form [`resource`, `action`] (without the `user` - relation with `user` are defined in RBAC policies). In this approach, it's challenging to name the `action` in a non-ambiguous way. For example, view of a lesson from a `teacher`'s perspective may be different from that of a `student`. So the couple [`lesson`, `view`] is ambiguous. We may add qualifier such as [`lesson`, `teacher-view`] and [`lesson`, `student-view`], but this is not elegant. The use of triple also has an important advantage of being user-centric.
 
 ## Admin functionalities
 
