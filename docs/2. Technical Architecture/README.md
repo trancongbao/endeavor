@@ -2,9 +2,11 @@
 
 ## Container Diagram
 
-<img src="./Container.excalidraw.svg" width="200">
+<img src="./Container.excalidraw.svg" width="400">
 
 ## Data Model
+
+See [Data Model](./Data%20Model/README.md).
 
 ## Modules
 
