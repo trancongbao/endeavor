@@ -69,7 +69,7 @@ Note: an alternative to this is to use couples of form [`resource`, `action`] (w
 | User    | Resource | Action      | Note                                        |
 | ------- | -------- | ----------- | ------------------------------------------- |
 | student | course   | study       | A student can study a course when assigned. |
-| teacher | course   | study_decks | A student can study all decks.              |
+| student | course   | study_decks | A student can study all decks.              |
 
 ### Admin
 
