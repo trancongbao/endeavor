@@ -50,6 +50,20 @@ erDiagram
 
 ```mermaid
 erDiagram
+    COURSE {
+        integer id PK
+        enum    status          "DRAFT, IN_REVIEW, APPROVED, PUBLISHED, or ARCHIVED"
+        string  name            "not null"
+        integer level           "not null"
+        string  summary
+        string  description
+        string  thumbnail
+        date    updated_at      "not null"
+    }
+```
+
+```mermaid
+erDiagram
   COURSE ||--|{ LESSON: has
 
   COURSE {

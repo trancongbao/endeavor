@@ -1,41 +1,5 @@
 ## COURSE
 
-A course is a collection of lessons.  
-Courses are designed by teachers.  
-Courses are ranked based on difficulty.
-
-### Diagram
-
-```mermaid
-erDiagram
-    COURSE {
-        integer id PK
-        enum    status          "DRAFT, IN_REVIEW, APPROVED, PUBLISHED, or ARCHIVED"
-        string  name            "not null"
-        integer level           "not null"
-        string  summary
-        string  description
-        string  thumbnail
-        date    updated_at      "not null"
-    }
-```
-
-### SQL
-
-```sql
-CREATE TYPE COURSE_STATUS AS ENUM ('DRAFT', 'IN_REVIEW', 'APPROVED', 'PUBLISHED', 'ARCHIVED');
-CREATE TABLE COURSE (
-    id SERIAL PRIMARY KEY,
-    status COURSE_STATUS,
-    title VARCHAR(255) NOT NULL,
-    level INT NOT NULL,
-    summary VARCHAR(255),
-    description TEXT,
-    thumbnail VARCHAR(255),
-    updated_at timestamp default current_timestamp
-);
-```
-
 ### Course status, version, and instance
 
 A course can be in one of the following `status`es:
