@@ -53,12 +53,12 @@ A student will be provided access to an online course free-of-charge if he/she h
 
 ## Functionalities
 
-Below is the list of high-level functionalities. Each functionality is defined using triples of form `[user, resource, action]`: a `user` performs an `action` on a `resource`.
+Below is the list of high-level functionalities. Each functionality is defined using triples of form `[user, resource, action]`: a `user` performs an `action` on a `resource`. The functionalities are grouped by `user`.
 
 > Notes:
 >
 > - An alternative to functionality definition is to use couples of form [`resource`, `action`] (without the `user` - relation with `user` are defined in RBAC policies). In this approach, it's challenging to name the `action` in a non-ambiguous way. For example, view of a lesson from a `teacher`'s perspective may be different from that of a `student`. So the couple [`lesson`, `view`] is ambiguous. We may add qualifier such as [`lesson`, `teacher-view`] and [`lesson`, `student-view`], but this is not elegant. The use of triple also has an important advantage of being user-centric.
-> - "High-level" means, for example, a `course` resouce includes `lessons` under it, and a `lesson` in turn, includes `decks`. `Decks` can be accessed and studied indepdently from `lessons`. `Study` also includes `review`.
+> - "High-level" means, for example, a `course` resource includes `lessons` under it, and a `lesson` in turn, includes `decks`. `Decks` can be accessed and studied indepdently from `lessons`. `Study` also includes `review`. For the docs for each functionality group for details.
 
 ### Teacher
 
@@ -70,6 +70,8 @@ Below is the list of high-level functionalities. Each functionality is defined u
 | teacher | course-draft | submit | A teacher can submit his draft to admin for approval. |
 | teacher | course       | view   | A teacher can (pre)view all courses: browse lessons.  |
 | teacher | course       | study  | A teacher can study all courses.                      |
+
+See
 
 ### Student
 
