@@ -2,21 +2,21 @@ name: endeavor
 
 services:
   postgres:
-    container_name: endeavor_postgres
-    image: postgres
+    container_name: postgres
+    image: postgres:18
     restart: always
     environment:
       POSTGRES_USER: postgres_user
       POSTGRES_PASSWORD: postgres_password
       POSTGRES_DB: postgres_db
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
       - ./postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d/
     ports:
       - 5432:5432
 
   pgadmin:
-    container_name: endeavor_pgadmin4
+    container_name: pgadmin4
     image: dpage/pgadmin4:8.5
     restart: always
     environment:
