@@ -348,14 +348,14 @@ function SuggestedWords({
           <div className="flex gap-2">
             <Button
               variant="outline"
-              className="self-start w-20 bg-orange-400  text-white text-md hover:bg-orange-300 hover:text-black py-2 px-4 rounded"
+              className="flex-1 text-wrap min-w-[150px] self-start w-20 bg-orange-400 text-white text-sm hover:bg-orange-300 hover:text-black py-2 px-4 rounded"
               onClick={() => onAddWord()}
             >
               Add Word
             </Button>
             <Button
               variant="outline"
-              className="self-start w-20 bg-orange-400  text-white text-md hover:bg-orange-300 hover:text-black py-2 px-4 rounded"
+              className="flex-1 text-wrap min-w-[150px] self-start w-20 bg-orange-400 text-white text-sm hover:bg-orange-300 hover:text-black py-2 px-4 rounded"
               onClick={onSeeOccurencesClicked}
             >
               See occurrences

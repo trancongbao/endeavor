@@ -56,6 +56,7 @@ export async function addCard(formData: FormData) {
       course_id: parseInt(formData.get('courseId') as string),
       lesson_order: parseInt(formData.get('lessonOrder') as string),
       order: parseInt(formData.get('order') as string),
+      card_id: `${formData.get('courseId')}/${formData.get('lessonOrder')}/${formData.get('order')}`,
       text: formData.get('text') as string,
     })
     .returningAll()
@@ -110,9 +111,7 @@ export async function addWordToCard(
   const addedCardWord = await (trx || kysely)
     .insertInto('card_word')
     .values({
-      course_id: courseId,
-      lesson_order: lessonOrder,
-      card_order: cardOrder,
+      card_id: `${courseId + "/" + lessonOrder + "/" + cardOrder}`,
       word_text: wordText,
       word_definition: wordDefinition,
       start_index: startIndex,
@@ -137,9 +136,7 @@ export async function removeWordFromCard(
   )
   const deletedCardWord = await (trx || kysely)
     .deleteFrom('card_word')
-    .where('course_id', '=', courseId)
-    .where('lesson_order', '=', lessonOrder)
-    .where('card_order', '=', cardOrder)
+    .where('card_id', '=', `${courseId + "/" + lessonOrder + "/" + cardOrder}`)
     .where('word_text', '=', wordText)
     .where('word_definition', '=', wordDefinition)
     .returningAll()

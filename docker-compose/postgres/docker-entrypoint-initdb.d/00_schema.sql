@@ -118,8 +118,10 @@ CREATE TABLE CARD
     "order"                 INTEGER NOT NULL,       -- Relative order of the card in the lesson
     text                    TEXT    NOT NULL,       -- Text (of the front side of the card)
     audio_uri               TEXT,                   -- URI for audio (associated with the front side)
+    card_id TEXT GENERATED ALWAYS AS (course_id || '/' || lesson_order || '/' || "order") STORED,
+    PRIMARY KEY (course_id, lesson_order, "order"),
     CONSTRAINT fk_lesson FOREIGN KEY (course_id, lesson_order) REFERENCES LESSON (course_id, "order"),
-    PRIMARY KEY (course_id, lesson_order, "order")
+    CONSTRAINT unique_card_id UNIQUE (card_id)
 );
 
 -- Table definition for WORD
@@ -138,14 +140,12 @@ CREATE TABLE WORD
 -- Table definition for CARD_WORD
 CREATE TABLE CARD_WORD
 (
-    course_id       INTEGER,            -- Foreign key referencing course_id in LESSON
-    lesson_order    INTEGER,            -- Foreign key referencing "order" in LESSON
-    card_order      INTEGER NOT NULL,   -- Relative order of the card in the lesson
+    card_id         TEXT,                -- Unique identifier for the card
     word_text       VARCHAR(255),       -- Foreign key referencing word
     word_definition TEXT,               -- Foreign key referencing word
     start_index     INTEGER NOT NULL,   -- Start index of the word in the card
     end_index       INTEGER NOT NULL,   -- End index of the word in the card
-    CONSTRAINT fk_card FOREIGN KEY (course_id, lesson_order, card_order) REFERENCES CARD (course_id, lesson_order, "order") ON DELETE CASCADE,
+    CONSTRAINT fk_card FOREIGN KEY (card_id) REFERENCES CARD (card_id) ON DELETE CASCADE,
     CONSTRAINT fk_word FOREIGN KEY (word_text, word_definition) REFERENCES WORD (text, definition),
-    PRIMARY KEY (course_id, lesson_order, card_order, word_text, word_definition)  -- Composite primary key
+    PRIMARY KEY (card_id, word_text, word_definition)  -- Composite primary key
 );
