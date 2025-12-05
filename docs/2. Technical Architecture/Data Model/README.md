@@ -102,40 +102,40 @@ Basic authentication is used, as it is simple but sufficient. Email is not chose
 
 ```mermaid
 erDiagram
-    ADMIN {
-        string username PK
-        string password "not null"
-        string surname "not null"
-        string given_name "not null"
-        string email "not null"
-        string phone "not null"
-        date date_of_birth "not null"
-        string address "not null"
-        string avatar "url to the avatar image"
-    }
-    TEACHER {
-        string username PK
-        string password "not null"
-        string surname "not null"
-        string given_name "not null"
-        string email "not null"
-        string phone "not null"
-        date date_of_birth "not null"
-        string address "not null"
-        string avatar "url to the avatar image"
-    }
-    STUDENT {
-        string username PK
-        string password "not null"
-        string surname "not null"
-        string given_name "not null"
-        string email
-        string phone
-        date date_of_birth "not null"
-        string address "not null"
-        string avatar "url to the avatar image"
-        integer proficiency "student's proficiency score"
-    }
+  ADMIN {
+    string username PK
+    string password "not null"
+    string surname "not null"
+    string given_name "not null"
+    string email "not null"
+    string phone "not null"
+    date date_of_birth "not null"
+    string address "not null"
+    string avatar "url to the avatar image"
+  }
+  TEACHER {
+    string username PK
+    string password "not null"
+    string surname "not null"
+    string given_name "not null"
+    string email "not null"
+    string phone "not null"
+    date date_of_birth "not null"
+    string address "not null"
+    string avatar "url to the avatar image"
+  }
+  STUDENT {
+    string username PK
+    string password "not null"
+    string surname "not null"
+    string given_name "not null"
+    string email
+    string phone
+    date date_of_birth "not null"
+    string address "not null"
+    string avatar "url to the avatar image"
+    integer proficiency "student's proficiency score"
+  }
 ```
 
 ## Resources
