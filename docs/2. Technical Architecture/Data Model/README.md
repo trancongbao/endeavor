@@ -20,6 +20,65 @@ Even for current one-to-many relationships, as the app evolves
 
 So it's better to use a RMDB with `json` support such as `PostgresSQL`.
 
+## Overview
+
+```mermaid
+erDiagram
+  TEACHER_COURSE }|--|{ TEACHER: has
+  TEACHER_COURSE }|--|{ COURSE: has
+
+  STUDENT_COURSE }|--|{ STUDENT: has
+  STUDENT_COURSE }|--|{ COURSE: has
+
+  TEACHER_COURSE {
+    string teacher_username PK
+    integer course_id PK
+  }
+
+  STUDENT_COURSE {
+    string student_username PK
+    integer course_id PK
+  }
+
+  TEACHER {
+    string username PK
+    string password "not null"
+    string surname "not null"
+    string given_name "not null"
+    string email "not null"
+    string phone "not null"
+    date date_of_birth "not null"
+    string address "not null"
+    string avatar "url to the avatar image"
+  }
+
+  STUDENT {
+    string username PK
+    string password "not null"
+    string surname "not null"
+    string given_name "not null"
+    string email
+    string phone
+    date date_of_birth "not null"
+    string address "not null"
+    string avatar "url to the avatar image"
+    integer proficiency "student's proficiency score"
+    }
+
+  COURSE {
+    integer id            PK
+    integer course_id     FK  "id of the course that the lesson belongs"
+    integer order             "order of the lesson in the course, not null"
+    string  title             "not null"
+    string  audio             "not null"
+    string  summary
+    string  description
+    string  thumbnail
+    string  content
+    date    updated_at        "not null"
+  }
+```
+
 ## Users
 
 There are 3 sub-domains having independent authentication/authorization needs. Therefore, 3 separate database tables are used.  
