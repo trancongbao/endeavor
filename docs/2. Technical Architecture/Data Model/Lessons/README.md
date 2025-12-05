@@ -3,6 +3,9 @@
 ```mermaid
 erDiagram
   COURSE ||--|{ LESSON: has
+  LESSON ||--o{ CARD : has
+  CARD_WORD ||--o{ WORD : contains
+  CARD_WORD ||--o{ CARD : contains
 
   COURSE {
     integer id            PK
@@ -50,8 +53,4 @@ erDiagram
     word_id         integer   PK,FK
     word_order      integer         "Relative order of the word in the card."
   }
-
-  LESSON ||--o{ CARD : has
-  CARD_WORD ||--o{ WORD : contains
-  CARD_WORD ||--o{ CARD : contains
 ```
