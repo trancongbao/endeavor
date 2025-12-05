@@ -140,4 +140,4 @@ erDiagram
 
 ## Resources
 
-See [Lesson](./Lessons/README.md) for more details.
+See [Lesson](./Lessons/README.md) and [Words](./Words/README.md) for more details.
