@@ -20,7 +20,9 @@ Even for current one-to-many relationships, as the app evolves
 
 So it's better to use a RMDB with `json` support such as `PostgresSQL`.
 
-## Overview
+## Overview/Conceptual Model
+
+Conceptual should be slim, describing only the main entities, their main properties, and their main relationships.
 
 ```mermaid
 erDiagram
