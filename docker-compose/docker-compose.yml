@@ -15,6 +15,25 @@ services:
     ports:
       - 5432:5432
 
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis:/root/redis
+
+  flyway:
+    container_name: flyway
+    image: flyway/flyway:11-alpine
+    depends_on:
+      - postgres
+    command: -url=jdbc:postgresql://postgres:5432/postgres_db -user=postgres_user -password=postgres_password migrate
+    volumes:
+      - ../database/migrations:/flyway/sql
+    restart: 'no'
+
   pgadmin:
     container_name: pgadmin4
     image: dpage/pgadmin4:8.5
@@ -28,15 +47,6 @@ services:
       - ./postgres/pgadmin4/preferences.json:/pgadmin4/preferences.json
     ports:
       - 5433:80
-
-  redis:
-    container_name: redis
-    image: redis:latest
-    restart: always
-    ports:
-      - '6379:6379'
-    volumes:
-      - redis:/root/redis
 
 volumes:
   postgres_data:
