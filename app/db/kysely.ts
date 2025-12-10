@@ -108,6 +108,7 @@ interface Card {
   course_id: number
   lesson_order: number
   order: number
+  card_id: string
   text: string
   audio_uri?: string
 }
@@ -122,9 +123,7 @@ interface Word {
 }
 
 interface CardWord {
-  course_id: number
-  lesson_order: number
-  card_order: number
+  card_id: string
   word_text: string
   word_definition: string
   start_index: number
