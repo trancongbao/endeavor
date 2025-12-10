@@ -51,8 +51,8 @@ services:
       PGADMIN_DEFAULT_PASSWORD: pgadmin_default_password
     volumes:
       - pgadmin_data:/var/lib/pgadmin
-      - ./postgres/pgadmin4/servers.json:/pgadmin4/servers.json
-      - ./postgres/pgadmin4/preferences.json:/pgadmin4/preferences.json
+      - ./pgadmin4/servers.json:/pgadmin4/servers.json
+      - ./pgadmin4/preferences.json:/pgadmin4/preferences.json
     ports:
       - 5433:80
 
