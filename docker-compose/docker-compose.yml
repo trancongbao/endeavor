@@ -39,14 +39,14 @@ services:
       FLYWAY_PASSWORD: postgres_password
       # Flyway Locations Setting: https://documentation.red-gate.com/fd/flyway-locations-setting-277579008.html
       FLYWAY_LOCATIONS: filesystem:/flyway/sql
+    # Migrate: https://documentation.red-gate.com/fd/migrate-277578887.html
+    volumes:
+      - ../database/migrations:/flyway/sql
+    command: migrate
+    restart: 'no'
     depends_on:
       postgres:
         condition: service_healthy
-    # Migrate: https://documentation.red-gate.com/fd/migrate-277578887.html
-    command: migrate
-    volumes:
-      - ../database/migrations:/flyway/sql
-    restart: 'no'
 
   pgadmin:
     container_name: pgadmin4
