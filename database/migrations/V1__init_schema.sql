@@ -20,6 +20,15 @@ S:::::::::::::::SS   cc:::::::::::::::c h:::::h     h:::::h  ee:::::::::::::e  m
 Source: https://patorjk.com/software/taag/#p=display&h=0&v=0&f=Doh&t=Data
 ***********************************************************************************************************************/
 
+CREATE DOMAIN email AS TEXT
+	NOT NULL
+	CHECK (value ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
+;
+
+CREATE DOMAIN date_of_birth AS date
+	CHECK (value > '1930-01-01'::date)
+;
+
 -- Define table structure for teachers
 CREATE TABLE TEACHER
 (
@@ -27,9 +36,9 @@ CREATE TABLE TEACHER
     password      VARCHAR(255) NOT NULL,    -- Password for the teacher
     surname       VARCHAR(255) NOT NULL,    -- Surname of the teacher
     given_name    VARCHAR(255) NOT NULL,    -- Given name of the teacher
-    email         VARCHAR(255) NOT NULL,    -- Email of the teacher
+    email         email,    -- Email of the teacher
     phone         VARCHAR(255) NOT NULL,    -- Phone number of the teacher
-    date_of_birth DATE         NOT NULL,    -- Date of birth of the teacher
+    date_of_birth date_of_birth         NOT NULL,    -- Date of birth of the teacher
     address       TEXT         NOT NULL,    -- Address of the teacher
     avatar        VARCHAR(255)              -- URL/path to the teacher's avatar
 );
