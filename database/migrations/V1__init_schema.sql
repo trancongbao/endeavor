@@ -21,26 +21,25 @@ Source: https://patorjk.com/software/taag/#p=display&h=0&v=0&f=Doh&t=Data
 ***********************************************************************************************************************/
 
 CREATE DOMAIN email AS TEXT
-	NOT NULL
 	CHECK (value ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
 ;
 
-CREATE DOMAIN date_of_birth AS date
+CREATE DOMAIN date_of_birth AS DATE
 	CHECK (value > '1930-01-01'::date)
 ;
 
 -- Define table structure for teachers
 CREATE TABLE TEACHER
 (
-    username      VARCHAR(255) PRIMARY KEY, -- Unique identifier for the teacher
-    password      VARCHAR(255) NOT NULL,    -- Password for the teacher
-    surname       VARCHAR(255) NOT NULL,    -- Surname of the teacher
-    given_name    VARCHAR(255) NOT NULL,    -- Given name of the teacher
-    email         email,    -- Email of the teacher
-    phone         VARCHAR(255) NOT NULL,    -- Phone number of the teacher
-    date_of_birth date_of_birth         NOT NULL,    -- Date of birth of the teacher
-    address       TEXT         NOT NULL,    -- Address of the teacher
-    avatar        VARCHAR(255)              -- URL/path to the teacher's avatar
+    username      VARCHAR(255)  PRIMARY KEY,    -- Unique identifier for the teacher
+    password      VARCHAR(255)  NOT NULL,       -- Password for the teacher
+    surname       VARCHAR(255)  NOT NULL,       -- Surname of the teacher
+    given_name    VARCHAR(255)  NOT NULL,       -- Given name of the teacher
+    email         email         NOT NULL,       -- Email of the teacher
+    phone         VARCHAR(255)  NOT NULL,       -- Phone number of the teacher
+    date_of_birth date_of_birth NOT NULL,       -- Date of birth of the teacher
+    address       TEXT          NOT NULL,       -- Address of the teacher
+    avatar        VARCHAR(255)                  -- URL/path to the teacher's avatar
 );
 
 -- Define table structure for students
