@@ -42,7 +42,7 @@ services:
       # Flyway Locations Setting: https://documentation.red-gate.com/fd/flyway-locations-setting-277579008.html
       FLYWAY_LOCATIONS: filesystem:/migrations,filesystem:/seeds
     # Migrate: https://documentation.red-gate.com/fd/migrate-277578887.html
-    command: migrate
+    command: -X migrate
     restart: 'no'
     depends_on:
       postgres:
