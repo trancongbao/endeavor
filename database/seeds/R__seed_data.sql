@@ -22,7 +22,7 @@ Source: https://patorjk.com/software/taag/#p=display&h=0&v=0&f=Doh&t=Schema
 
 -- Seed data for TEACHER table
 INSERT INTO TEACHER (username, password, surname, given_name, email, phone, date_of_birth, address, avatar)
-VALUES ('teacher1', 'password1', 'Garcia', 'Carlos', 'carlos.garcia-example.com', '+1112223333', '1980-07-10',
+VALUES ('teacher1', 'password1', 'Garcia', 'Carlos', 'carlos.garcia@example.com', '+1112223333', '1980-07-10',
         '111 Walnut St, City, Country', 'https://example.com/avatar6.jpg'),
        ('teacher2', 'password2', 'Martinez', 'Luisa', 'luisa.martinez@example.com', '+4445556666', '1972-09-12',
         '222 Maple St, City, Country', 'https://example.com/avatar7.jpg'),
