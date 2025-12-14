@@ -76,7 +76,7 @@ COMMENT ON COLUMN STUDENT.phone IS 'Student''s contact phone number';
 COMMENT ON COLUMN STUDENT.date_of_birth IS 'Student''s date of birth';
 COMMENT ON COLUMN STUDENT.address IS 'Residential address of the student';
 COMMENT ON COLUMN STUDENT.avatar IS 'URL or file path to the student''s avatar image';
-COMMENT ON COLUMN STUDENT.proficiency IS 'Student proficiency level (e.g., numeric scale or CEFR mappi
+COMMENT ON COLUMN STUDENT.proficiency IS 'Student proficiency level';
 
 -- Define custom enumeration type for course status
 CREATE TYPE COURSE_STATUS AS ENUM ('DRAFT', 'IN_REVIEW', 'APPROVED', 'PUBLISHED', 'ARCHIVED');
