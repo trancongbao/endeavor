@@ -21,12 +21,14 @@ Source: https://patorjk.com/software/taag/#p=display&h=0&v=0&f=Doh&t=Data
 ***********************************************************************************************************************/
 
 CREATE DOMAIN email AS TEXT
-	CHECK (value ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
+    CHECK (value ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
 ;
+COMMENT ON DOMAIN email IS 'Email address format: local@domain with basic RFC-style validation (case-insensitive)';
 
 CREATE DOMAIN date_of_birth AS DATE
 	CHECK (value > '1930-01-01'::date)
 ;
+COMMENT ON DOMAIN date_of_birth IS 'Date of birth must be later than 1930-01-01 (used to prevent unrealistic ages)';
 
 -- Define table structure for teachers
 CREATE TABLE TEACHER
@@ -45,16 +47,16 @@ CREATE TABLE TEACHER
 -- Define table structure for students
 CREATE TABLE STUDENT
 (
-    username      VARCHAR(255) PRIMARY KEY, -- Unique identifier for the student
-    password      VARCHAR(255) NOT NULL,    -- Password for the student
-    surname       VARCHAR(255) NOT NULL,    -- Surname of the student
-    given_name    VARCHAR(255) NOT NULL,    -- Given name of the student
-    email         VARCHAR(255),             -- Email of the student
-    phone         VARCHAR(255),             -- Phone number of the student
-    date_of_birth DATE         NOT NULL,    -- Date of birth of the student
-    address       TEXT         NOT NULL,    -- Address of the student
-    avatar        VARCHAR(255),             -- URL/path to the student's avatar
-    proficiency   INTEGER                   -- Proficiency level of the student
+    username      VARCHAR(255)  PRIMARY KEY,    -- Unique identifier for the student
+    password      VARCHAR(255)  NOT NULL,       -- Password for the student
+    surname       VARCHAR(255)  NOT NULL,       -- Surname of the student
+    given_name    VARCHAR(255)  NOT NULL,       -- Given name of the student
+    email         email         NOT NULL,       -- Email of the student
+    phone         VARCHAR(255),                 -- Phone number of the student
+    date_of_birth DATE          NOT NULL,       -- Date of birth of the student
+    address       TEXT          NOT NULL,       -- Address of the student
+    avatar        VARCHAR(255),                 -- URL/path to the student's avatar
+    proficiency   INTEGER                       -- Proficiency level of the student
 );
 
 -- Define custom enumeration type for course status
