@@ -20,34 +20,63 @@ S:::::::::::::::SS   cc:::::::::::::::c h:::::h     h:::::h  ee:::::::::::::e  m
 Source: https://patorjk.com/software/taag/#p=display&h=0&v=0&f=Doh&t=Data
 ***********************************************************************************************************************/
 
--- Define table structure for teachers
+CREATE DOMAIN email AS TEXT
+    CHECK (value ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
+;
+COMMENT ON DOMAIN email IS 'Email address format: local@domain with basic RFC-style validation (case-insensitive)';
+
+CREATE DOMAIN date_of_birth AS DATE
+	CHECK (value > '1930-01-01'::date)
+;
+COMMENT ON DOMAIN date_of_birth IS 'Date of birth must be later than 1930-01-01 (used to prevent unrealistic ages)';
+
 CREATE TABLE TEACHER
 (
-    username      VARCHAR(255) PRIMARY KEY, -- Unique identifier for the teacher
-    password      VARCHAR(255) NOT NULL,    -- Password for the teacher
-    surname       VARCHAR(255) NOT NULL,    -- Surname of the teacher
-    given_name    VARCHAR(255) NOT NULL,    -- Given name of the teacher
-    email         VARCHAR(255) NOT NULL,    -- Email of the teacher
-    phone         VARCHAR(255) NOT NULL,    -- Phone number of the teacher
-    date_of_birth DATE         NOT NULL,    -- Date of birth of the teacher
-    address       TEXT         NOT NULL,    -- Address of the teacher
-    avatar        VARCHAR(255)              -- URL/path to the teacher's avatar
+    username      VARCHAR(255)  PRIMARY KEY,    
+    password      VARCHAR(255)  NOT NULL,       
+    surname       VARCHAR(255)  NOT NULL,      
+    given_name    VARCHAR(255)  NOT NULL,       
+    email         email         NOT NULL,       
+    phone         VARCHAR(255)  NOT NULL,      
+    date_of_birth date_of_birth NOT NULL,       
+    address       TEXT          NOT NULL,      
+    avatar        VARCHAR(255)                  
 );
+COMMENT ON TABLE TEACHER IS 'Stores teacher account and personal information';
+COMMENT ON COLUMN TEACHER.username IS 'Unique identifier (login username) for the teacher';
+COMMENT ON COLUMN TEACHER.password IS 'Hashed password for teacher authentication';
+COMMENT ON COLUMN TEACHER.surname IS 'Teacher''s family name';
+COMMENT ON COLUMN TEACHER.given_name IS 'Teacher''s given (first) name';
+COMMENT ON COLUMN TEACHER.email IS 'Teacher''s email address';
+COMMENT ON COLUMN TEACHER.phone IS 'Teacher''s contact phone number';
+COMMENT ON COLUMN TEACHER.date_of_birth IS 'Teacher''s date of birth';
+COMMENT ON COLUMN TEACHER.address IS 'Residential address of the teacher';
+COMMENT ON COLUMN TEACHER.avatar IS 'URL or file path to the teacher''s avatar image';
 
--- Define table structure for students
 CREATE TABLE STUDENT
 (
-    username      VARCHAR(255) PRIMARY KEY, -- Unique identifier for the student
-    password      VARCHAR(255) NOT NULL,    -- Password for the student
-    surname       VARCHAR(255) NOT NULL,    -- Surname of the student
-    given_name    VARCHAR(255) NOT NULL,    -- Given name of the student
-    email         VARCHAR(255),             -- Email of the student
-    phone         VARCHAR(255),             -- Phone number of the student
-    date_of_birth DATE         NOT NULL,    -- Date of birth of the student
-    address       TEXT         NOT NULL,    -- Address of the student
-    avatar        VARCHAR(255),             -- URL/path to the student's avatar
-    proficiency   INTEGER                   -- Proficiency level of the student
+    username       VARCHAR(255)  PRIMARY KEY,
+    password       VARCHAR(255)  NOT NULL,
+    surname        VARCHAR(255)  NOT NULL,
+    given_name     VARCHAR(255)  NOT NULL,
+    email          email         NOT NULL,
+    phone          VARCHAR(255),
+    date_of_birth  DATE          NOT NULL,
+    address        TEXT          NOT NULL,
+    avatar         VARCHAR(255),
+    proficiency    INTEGER
 );
+COMMENT ON TABLE STUDENT IS 'Stores student account details and personal information';
+COMMENT ON COLUMN STUDENT.username IS 'Unique identifier (login username) for the student';
+COMMENT ON COLUMN STUDENT.password IS 'Hashed password for student authentication';
+COMMENT ON COLUMN STUDENT.surname IS 'Student''s family name';
+COMMENT ON COLUMN STUDENT.given_name IS 'Student''s given (first) name';
+COMMENT ON COLUMN STUDENT.email IS 'Student''s email address';
+COMMENT ON COLUMN STUDENT.phone IS 'Student''s contact phone number';
+COMMENT ON COLUMN STUDENT.date_of_birth IS 'Student''s date of birth';
+COMMENT ON COLUMN STUDENT.address IS 'Residential address of the student';
+COMMENT ON COLUMN STUDENT.avatar IS 'URL or file path to the student''s avatar image';
+COMMENT ON COLUMN STUDENT.proficiency IS 'Student proficiency level';
 
 -- Define custom enumeration type for course status
 CREATE TYPE COURSE_STATUS AS ENUM ('DRAFT', 'IN_REVIEW', 'APPROVED', 'PUBLISHED', 'ARCHIVED');
