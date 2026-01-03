@@ -13,7 +13,7 @@ services:
     ports:
       - 5432:5432
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U postgres_user']
+      test: ['CMD-SHELL', 'pg_isready -U superuser']
       interval: 5s
       retries: 5
     restart: always
