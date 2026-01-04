@@ -1,7 +1,5 @@
 # Database
 
-## Security
+When app gets big, consider creating multiple schemas for decomposition.
 
-- superuser
-- flyway
-- app
+
