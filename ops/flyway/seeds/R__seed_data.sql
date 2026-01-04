@@ -1,24 +1,4 @@
-/***********************************************************************************************************************
-
-DDDDDDDDDDDDD                                   tttt
-D::::::::::::DDD                             ttt:::t
-D:::::::::::::::DD                           t:::::t
-DDD:::::DDDDD:::::D                          t:::::t
-  D:::::D    D:::::D   aaaaaaaaaaaaa   ttttttt:::::ttttttt      aaaaaaaaaaaaa
-  D:::::D     D:::::D  a::::::::::::a  t:::::::::::::::::t      a::::::::::::a
-  D:::::D     D:::::D  aaaaaaaaa:::::a t:::::::::::::::::t      aaaaaaaaa:::::a
-  D:::::D     D:::::D           a::::a tttttt:::::::tttttt               a::::a
-  D:::::D     D:::::D    aaaaaaa:::::a       t:::::t              aaaaaaa:::::a
-  D:::::D     D:::::D  aa::::::::::::a       t:::::t            aa::::::::::::a
-  D:::::D     D:::::D a::::aaaa::::::a       t:::::t           a::::aaaa::::::a
-  D:::::D    D:::::D a::::a    a:::::a       t:::::t    tttttta::::a    a:::::a
-DDD:::::DDDDD:::::D  a::::a    a:::::a       t::::::tttt:::::ta::::a    a:::::a
-D:::::::::::::::DD   a:::::aaaa::::::a       tt::::::::::::::ta:::::aaaa::::::a
-D::::::::::::DDD      a::::::::::aa:::a        tt:::::::::::tt a::::::::::aa:::a
-DDDDDDDDDDDDD          aaaaaaaaaa  aaaa          ttttttttttt    aaaaaaaaaa  aaaa
-
-Source: https://patorjk.com/software/taag/#p=display&h=0&v=0&f=Doh&t=Schema
-***********************************************************************************************************************/
+SET search_path TO app;
 
 -- Seed data for TEACHER table
 INSERT INTO TEACHER (username, password, surname, given_name, email, phone, date_of_birth, address, avatar)
