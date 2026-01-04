@@ -22,7 +22,7 @@ psql \
   -d "$POSTGRES_DB" \
   --set=flyway_user_pwd="$FLYWAY_USER_PWD" \
 <<-EOSQL
-  CREATE ROLE flyway LOGIN PASSWORD :'flyway_user_pwd';
+  CREATE ROLE flyway NOINHERIT LOGIN PASSWORD :'flyway_user_pwd';
   GRANT CONNECT ON DATABASE ${POSTGRES_DB} TO flyway;
   GRANT USAGE, CREATE ON SCHEMA public TO flyway;
 EOSQL
