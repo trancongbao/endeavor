@@ -43,5 +43,7 @@ docker run --rm \
   --env-file .env \
   -e FLYWAY_URL=jdbc:postgresql://postgres:$POSTGRES_PORT/$POSTGRES_DB \
   -e FLYWAY_SCHEMAS=flyway \
-  -v "$PWD/migrations:/flyway/sql" \
+  -e FLYWAY_LOCATIONS=filesystem:/flyway/migrations,filesystem:/flyway/seeds \
+  -v "$PWD/migrations:/flyway/migrations" \
+  -v "$PWD/seeds:/flyway/seeds" \
   flyway/flyway:11-alpine migrate
