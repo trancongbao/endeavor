@@ -5,12 +5,12 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Load Postgres admin credentials
 set -a
-source "$SCRIPT_DIR/../postgres/.postgres.env"
+source "$SCRIPT_DIR/../postgres/.env"
 set +a
 
 # Load Flyway password
 set -a
-source "$SCRIPT_DIR/.flyway.env"
+source "$SCRIPT_DIR/.env"
 set +a
 
 # Create flyway user if it does not exist
