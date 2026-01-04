@@ -15,7 +15,7 @@ set +a
 
 # Create flyway user if it does not exist
 export PGPASSWORD="$POSTGRES_PASSWORD"
-psql -h localhost -p 5432 -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
+psql -h "$POSTGRES_HOST" -p "$POSTGRES_PORT" -U "$POSTGRES_USER" -d "$POSTGRES_DB" \
 <<-EOSQL  
   DO \$\$
   BEGIN
