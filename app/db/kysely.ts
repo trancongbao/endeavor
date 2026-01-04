@@ -7,9 +7,9 @@ export type { EndeavorDB, Admin, Teacher, Student, Course, Lesson, Card, Word, T
 const pool = new Pool({
   host: 'localhost',
   port: 5432,
-  user: 'postgres_user',
-  password: 'postgres_password',
-  database: 'postgres_db',
+  user: 'app',
+  password: 'password',
+  database: 'postgres',
   max: 10,
 })
 
