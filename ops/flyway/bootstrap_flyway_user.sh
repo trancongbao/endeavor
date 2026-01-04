@@ -5,12 +5,12 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Load Postgres admin credentials
 set -a
-source "$SCRIPT_DIR/../../docker-compose/.env"
+source "$SCRIPT_DIR/../postgres/.postgres.env"
 set +a
 
 # Load Flyway password
 set -a
-source "$SCRIPT_DIR/.env"
+source "$SCRIPT_DIR/.flyway.env"
 set +a
 
 export PGPASSWORD="$POSTGRES_PASSWORD"
