@@ -59,10 +59,13 @@ export default function CardList({ selectedSubdeckRows }: { selectedSubdeckRows:
                       setSelectedCardOrder(getFirstCardOrder(groupedCardRows))
                     }
                   }
-                  deleteCard(courseId, lessonOrder, parseInt(cardOrder))
+                  deleteCard({ course_id: courseId, lesson_order: lessonOrder, order: parseInt(cardOrder) })
                 }}
                 editCardText={(newCardText: string) => {
-                  editCardText(courseId, lessonOrder, parseInt(cardOrder), newCardText)
+                  editCardText(
+                    { course_id: courseId, lesson_order: lessonOrder, order: parseInt(cardOrder) },
+                    newCardText
+                  )
                 }}
               />
             ))}
