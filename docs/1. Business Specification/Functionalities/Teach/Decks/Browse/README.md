@@ -15,9 +15,7 @@ See [Lesson Decks](./Lesson%20Decks/README.md).
 
 ## Card List
 
-### Add
-
-<img src="./Add Card.excalidraw.svg" width="1000">
+See [Card List](./Card%20List/README.md).
 
 ## Card
 
