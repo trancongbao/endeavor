@@ -71,7 +71,7 @@ Below is the list of high-level functionalities. Each functionality is defined u
 | teacher | course       | view   | A teacher can (pre)view all courses: browse lessons.  |
 | teacher | course       | study  | A teacher can study all courses.                      |
 
-See [Teacher](./Functionalities/Teacher/README.md) for more details.
+See [Teacher](./Functionalities/Teach/README.md) for more details.
 
 ### Student
 
