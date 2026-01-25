@@ -1,9 +1,9 @@
 'use server'
 import { revalidatePath } from 'next/cache'
-import { EndeavorDB, kysely } from './db/kysely'
+import { EndeavorDB, kysely, Lesson, LessonKey } from './db/kysely'
 import path from 'path'
 import { promises as fs } from 'fs'
-import { Transaction } from 'kysely'
+import { sql, Transaction } from 'kysely'
 
 export async function addSubdeck(formData: FormData) {
   const addedSubdeck = await kysely
@@ -20,12 +20,11 @@ export async function addSubdeck(formData: FormData) {
   revalidatePath('/teacher/decks/[id]', 'page')
 }
 
-export async function deleteSubdeck(courseId: number, subdeckOrder: number) {
-  console.log(`deleteSubdeck: courseId = ${courseId}, subdeckOrder = ${subdeckOrder}`)
+export async function deleteSubdeck({ course_id, order }: LessonKey) {
+  console.log(`deleteSubdeck: courseId = ${course_id}, subdeckOrder = ${order}`)
   const deletedSubdeck = await kysely
     .deleteFrom('lesson')
-    .where('course_id', '=', courseId)
-    .where('order', '=', subdeckOrder)
+    .where(sql<boolean>`(course_id, "order") = (${course_id}, ${order})`)
     .returningAll()
     .executeTakeFirstOrThrow()
   console.log('Deleted subdeck: ', deletedSubdeck)

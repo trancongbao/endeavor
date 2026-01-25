@@ -110,7 +110,7 @@ function SubdeckList({ groupedSubdeckRows, courseId, selectedSubdeckOrder, setSe
               editSubdeckTitle={(subdeckOrder, newSubdeckTitle) =>
                 editSubdeckTitle(courseId, subdeckOrder, newSubdeckTitle)
               }
-              deleteSubdeck={(order) => deleteSubdeck(courseId, order)}
+              deleteSubdeck={(order) => deleteSubdeck({ course_id: courseId, order })}
             />
           </div>
         )
