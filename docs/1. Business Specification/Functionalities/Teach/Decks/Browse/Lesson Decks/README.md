@@ -19,3 +19,8 @@ Clicking `Add lesson` button displays
 <img src="./Edit Lesson.excalidraw.svg" width="1000">
 
 ## Delete
+
+When a teacher clicks `Delete` on `More` menu:
+
+- the lesson is removed from the UI
+- the lesson is removed from the database
