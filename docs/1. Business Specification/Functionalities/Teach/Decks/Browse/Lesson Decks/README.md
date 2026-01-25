@@ -16,4 +16,6 @@ Clicking `Add lesson` button displays
 
 ## Edit
 
+<img src="./Edit Lesson.excalidraw.svg" width="1000">
+
 ## Delete
