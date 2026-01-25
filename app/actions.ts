@@ -1,6 +1,6 @@
 'use server'
 import { revalidatePath } from 'next/cache'
-import { EndeavorDB, kysely, Lesson, LessonKey } from './db/kysely'
+import { CardKey, EndeavorDB, kysely, Lesson, LessonKey } from './db/kysely'
 import path from 'path'
 import { promises as fs } from 'fs'
 import { sql, Transaction } from 'kysely'
@@ -32,12 +32,11 @@ export async function deleteSubdeck({ course_id, order }: LessonKey) {
   //TODO: Delete all cards in the subdeck
 }
 
-export async function editSubdeckTitle(courseId: number, subdeckOrder: number, newSubdeckTitle: string) {
-  console.log('editSubdeckTitle: courseId = ', courseId)
+export async function editSubdeckTitle({ course_id, order }: LessonKey, newSubdeckTitle: string) {
+  console.log('editSubdeckTitle: course_id = ', course_id)
   const updatedSubdeck = await kysely
     .updateTable('lesson')
-    .where('course_id', '=', courseId)
-    .where('order', '=', subdeckOrder)
+    .where(sql<boolean>`(course_id, "order") = (${course_id}, ${order})`)
     .set({
       title: newSubdeckTitle,
     })
@@ -64,26 +63,22 @@ export async function addCard(formData: FormData) {
   revalidatePath('/teacher/decks/[id]', 'page')
 }
 
-export async function deleteCard(courseId: number, subdeckOrder: number, cardOrder: number) {
-  console.log(`deleteCard: courseId = ${courseId}, subdeckOrder = ${subdeckOrder}, cardOrder = ${cardOrder}`)
+export async function deleteCard({ course_id, lesson_order, order }: CardKey) {
+  console.log(`deleteCard: courseId = ${course_id}, lesson_order = ${lesson_order}, order = ${order}`)
   const deletedSubdeck = await kysely
     .deleteFrom('card')
-    .where('course_id', '=', courseId)
-    .where('lesson_order', '=', subdeckOrder)
-    .where('order', '=', cardOrder)
+    .where(sql<boolean>`(course_id, lesson_order, "order") = (${course_id}, ${lesson_order}, ${order})`)
     .returningAll()
     .executeTakeFirstOrThrow()
   console.log('Deleted subdeck: ', deletedSubdeck)
   revalidatePath('/teacher/decks/[id]', 'page')
 }
 
-export async function editCardText(courseId: number, subdeckOrder: number, cardOrder: number, newCardText: string) {
-  console.log('editCardText: courseId = ', courseId)
+export async function editCardText({ course_id, lesson_order, order }: CardKey, newCardText: string) {
+  console.log('editCardText: courseId = ', course_id)
   const updatedCard = await kysely
     .updateTable('card')
-    .where('course_id', '=', courseId)
-    .where('lesson_order', '=', subdeckOrder)
-    .where('order', '=', cardOrder)
+    .where(sql<boolean>`(course_id, lesson_order, "order") = (${course_id}, ${lesson_order}, ${order})`)
     .set({
       text: newCardText,
     })
@@ -94,9 +89,7 @@ export async function editCardText(courseId: number, subdeckOrder: number, cardO
 }
 
 export async function addWordToCard(
-  courseId: number,
-  lessonOrder: number,
-  cardOrder: number,
+  { course_id, lesson_order, order }: CardKey,
   wordText: string,
   wordDefinition: string,
   startIndex: number,
@@ -104,14 +97,14 @@ export async function addWordToCard(
   trx?: Transaction<EndeavorDB>
 ) {
   console.log(
-    `addWordToCard: courseId = ${courseId}, lessonOrder = ${lessonOrder}, cardOrder = ${cardOrder}, wordText = ${wordText}, wordDefinition = ${wordDefinition}, startIndex = ${startIndex}, endIndex = ${endIndex}`
+    `addWordToCard: course_id = ${course_id}, lesson_order = ${lesson_order}, card_order = ${order}, wordText = ${wordText}, wordDefinition = ${wordDefinition}, startIndex = ${startIndex}, endIndex = ${endIndex}`
   )
   const addedCardWord = await (trx || kysely)
     .insertInto('card_word')
     .values({
-      course_id: courseId,
-      lesson_order: lessonOrder,
-      card_order: cardOrder,
+      course_id,
+      lesson_order,
+      card_order: order,
       word_text: wordText,
       word_definition: wordDefinition,
       start_index: startIndex,
@@ -124,21 +117,17 @@ export async function addWordToCard(
 }
 
 export async function removeWordFromCard(
-  courseId: number,
-  lessonOrder: number,
-  cardOrder: number,
+  { course_id, lesson_order, order }: CardKey,
   wordText: string,
   wordDefinition: string,
   trx?: Transaction<EndeavorDB>
 ) {
   console.log(
-    `removeWordFromCard: courseId = ${courseId}, lessonOrder = ${lessonOrder}, cardOrder = ${cardOrder}, wordText = ${wordText}, wordDefinition = ${wordDefinition}`
+    `removeWordFromCard: course_id = ${course_id}, lesson_order = ${lesson_order}, card_order = ${order}, wordText = ${wordText}, wordDefinition = ${wordDefinition}`
   )
   const deletedCardWord = await (trx || kysely)
     .deleteFrom('card_word')
-    .where('course_id', '=', courseId)
-    .where('lesson_order', '=', lessonOrder)
-    .where('card_order', '=', cardOrder)
+    .where(sql<boolean>`(course_id, lesson_order, card_order) = (${course_id}, ${lesson_order}, ${order})`)
     .where('word_text', '=', wordText)
     .where('word_definition', '=', wordDefinition)
     .returningAll()

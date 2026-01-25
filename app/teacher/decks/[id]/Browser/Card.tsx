@@ -86,9 +86,7 @@ export default function Card({ selectedCardRows }: { selectedCardRows: CardRow[]
           onOpenChange={setSuggestedWordsVisible}
           onSelect={(wordText: string, wordDefinition: string) => {
             addWordToCard(
-              courseId,
-              lessonOrder,
-              cardOrder,
+              { course_id: courseId, lesson_order: lessonOrder, order: cardOrder },
               wordText,
               wordDefinition,
               selectionInfo!.startIndex,
@@ -135,9 +133,7 @@ export default function Card({ selectedCardRows }: { selectedCardRows: CardRow[]
                       wordRow={wordRow}
                       onSave={async (text: string, definition: string) => {
                         await addWordToCard(
-                          courseId,
-                          lessonOrder,
-                          cardOrder,
+                          { course_id: courseId, lesson_order: lessonOrder, order: cardOrder },
                           text,
                           definition,
                           selectionInfo!.startIndex,
@@ -151,6 +147,7 @@ export default function Card({ selectedCardRows }: { selectedCardRows: CardRow[]
                   )
                 case 'edit':
                   return (
+                    // TODO: should display SuggestedWords instead of WordForm when editing
                     <WordForm
                       key={index}
                       wordRow={wordRow}
@@ -318,6 +315,8 @@ function SuggestedWords({
 }) {
   const [suggestedWords, setSuggestedWords] = useState<{ text: string; definition: string }[] | null>(null)
 
+  // TODO: use debounce to avoid too many requests
+  // TODO: useQuery from react-query
   useEffect(() => {
     fetch(`/api/word/${encodeURIComponent(selectionInfo.text)}/word-search`).then(async (response) => {
       if (response.ok) {
@@ -415,9 +414,7 @@ function Word({ wordRow, onEdit }: { wordRow: WordRow; onEdit: (wordRow: WordRow
           variant="ghost"
           onClick={() =>
             removeWordFromCard(
-              wordRow.courseId,
-              wordRow.lessonOrder,
-              wordRow.cardOrder,
+              { course_id: wordRow.courseId, lesson_order: wordRow.lessonOrder, order: wordRow.cardOrder },
               wordRow.wordText,
               wordRow.wordDefinition
             )

@@ -1,9 +1,8 @@
 import { Pool } from 'pg'
 import { Kysely, PostgresDialect, Generated, ColumnType } from 'kysely'
-import { extend } from 'lodash'
 
 export { kysely, CourseStatus }
-export type { EndeavorDB, Admin, Teacher, Student, Course, LessonKey, Lesson, Card, Word, TeacherCourse }
+export type { EndeavorDB, Admin, Teacher, Student, Course, LessonKey, Lesson, CardKey, Card, Word, TeacherCourse }
 
 const pool = new Pool({
   host: 'localhost',
@@ -108,10 +107,13 @@ interface Lesson extends LessonKey {
   updated_at: ColumnType<Date, string | undefined, never>
 }
 
-interface Card {
+interface CardKey {
   course_id: number
   lesson_order: number
   order: number
+}
+
+interface Card extends CardKey {
   text: string
   audio_uri?: string
 }
