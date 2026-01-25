@@ -21,6 +21,4 @@
 
 ## Card
 
-### Front
-
-### Back
+See [Card](./Card/README.md).
