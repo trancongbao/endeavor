@@ -11,10 +11,16 @@
 
 ## Lessons
 
-### Actions Menu
+### Edit
 
 <img src="./Lesson More.excalidraw.svg" width="1000">
 
 ## Card List
 
+### Add
+
 ## Card
+
+### Front
+
+### Back
