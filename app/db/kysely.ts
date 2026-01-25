@@ -4,6 +4,7 @@ import { extend } from 'lodash'
 
 export { kysely, CourseStatus }
 export type { EndeavorDB, Admin, Teacher, Student, Course, LessonKey, Lesson, CardKey, Card, Word, TeacherCourse }
+export type { EndeavorDB, Admin, Teacher, Student, Course, LessonKey, Lesson, Card, Word, TeacherCourse }
 
 const pool = new Pool({
   host: 'localhost',
