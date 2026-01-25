@@ -9,15 +9,15 @@
 
 <img src="./Browse.excalidraw.svg" width="1000">
 
-## Lessons
+## Lesson Decks
 
-### Edit
-
-<img src="./Lesson More.excalidraw.svg" width="1000">
+See [Lesson Decks](./Lesson%20Decks/README.md).
 
 ## Card List
 
 ### Add
+
+<img src="./Add Card.excalidraw.svg" width="1000">
 
 ## Card
 
